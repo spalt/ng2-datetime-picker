@@ -85,7 +85,10 @@ export class DateTime {
       return ("0"+number).slice(-2);
     };
 
-    var ret = d.getFullYear() +'-' + pad0(d.getMonth() + 1) + '-' + pad0(d.getDate());
+    //DAN: changing for my needs
+    //var ret = d.getFullYear() +'-' + pad0(d.getMonth() + 1) + '-' + pad0(d.getDate());
+    var ret = pad0(d.getMonth() + 1) + '-' + pad0(d.getDate()) + '-' + d.getFullYear();
+    
     if(!dateOnly) {
       ret += ' ' + pad0(d.getHours()) + ':' + pad0(d.getMinutes());
     }
